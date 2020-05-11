@@ -12,32 +12,32 @@ Commit your code regularly and meaningfully. This helps both you and your team l
 
 ### Description
 
-In this project, you build an app that diplays a scoreboard for an american football game. There will be two buttons for each team - one will increment that team's score by three points (for a "field goal") and the other will increment that team's score by seven points (for a "touchdown" and "extra point"). The css is already done for you. You should focus your efforts on the functionality of the app.
+In this project, you build an app that displays a scoreboard for an American football game. There will be two buttons for each team - one will increment that team's score by three points (for a "field goal") and the other will increment that team's score by seven points (for a "touchdown" and "extra point"). The css is already done for you. You should focus your efforts on the functionality of the app.
 
 ## Project Set Up
 
-- [x] Create a forked copy of this project.
-- [x] Add your team lead as collaborator on Github.
-- [x] Clone your OWN version of the repository in your terminal
-- [x] CD into the project base directory `cd american-football-scoreboard`
-- [x] Download project dependencies by running one of these two commands `yarn` or `npm install`
-- [x] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
-- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [x] Push commits: git push origin `<firstName-lastName>`.
+- Create a forked copy of this project.
+- Add your team lead as collaborator on Github.
+- Clone your OWN version of the repository in your terminal
+- CD into the project base directory `cd american-football-scoreboard`
+- Download project dependencies by running `npm install`
+- Start up the app using `npm start`
+- Create a new branch: git checkout -b `<firstName-lastName>`.
+- Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
-- [x] Add your team lead as a reviewer on the pull-request
-- [x] Your team lead will count the project as complete by merging the branch back into master.
-- [x] Do your magic!
+- Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
+- Add your team lead as a reviewer on the pull-request
+- Your team lead will count the project as complete by merging the branch back into master.
+- Do your magic!
 
 ## Minimum Viable Product
 
 1. Hold each team's current score in a state value
-1. Render each team's current score that is in state to the DOM.
-1. Be able to click the different buttons to increment the appropriate team's score by the correct amount
+2. Render each team's current score that is in state to the DOM.
+3. Be able to click the different buttons to increment the appropriate team's score by the correct amount
 
 ### STEP 1 & 2 - Adding Team Scores to the Component's State
 
@@ -66,10 +66,24 @@ const [value, setValue] = useState(); // Give these better names, and decide whe
 
 ## Stretch Problems
 
-After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
+After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on any the following optional goals:
 
-- Break out parts of this component into smaller components and compose multiple components together to make the UI
-- Write a "handler" function in the component that takes in a team name and an amount. This function will then be passed to each button's click handler. It will increment the correct team's score by the passed in amount
-- Play around with the styling and make this project your own! Maybe make it a soccer (non-american football) scoreboard, or a rugby or baseball scoreboard
+### Stretch Goal 1
+
+- Break out parts of App component into smaller components and compose multiple components together to make the UI
+- Write a "handler" function in App component that takes in a team name and an amount. This function will then be passed to each button's click handler. It will increment the correct team's score by the passed in amount
+- Play around with the styling and make this project your own! Maybe make it a soccer (non-American football) scoreboard, or a rugby or baseball scoreboard
 - Add a button that changes which quarter the game is in, and then render the state quarter value on the scoreboard
 - Make the entire board fully functional with buttons and state! (If you want to make a timer, you'll have to look into useEffect)
+
+### Stretch Goal 2
+
+Start building a game of **Tic Tac Toe** in React. The positions of the 'Xs' and the 'Os' over time need to be maintained in a slice of state at the top-level component, so that the JSX may display the contents of the 3 x 3 grid correctly. Only empty squares may be selected by the human player, and the event handler that deals with these clicks will have to include quite a bit of logic:
+
+  1. Does the latest move by the human player mean **the game is over**? (Game over, then!)
+  1. Is the game **immediately winnable by the computer** by making a certain move? (Do it!)
+  1. Can the computer **block the human from winning on their next move** by making certain move? (Do it!)
+  
+The move by the computer should probably be random if the previous checks turn out negative, but you'll be surprised at how smart the "game engine" will feel.
+
+Have fun!
