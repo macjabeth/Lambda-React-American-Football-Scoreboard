@@ -1,43 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import BottomRow from './BottomRow';
+import React, { useEffect, useState } from 'react';
+import Scoreboard from './components/Scoreboard';
+import Controls from './components/Controls';
 import './App.css';
-
-function Scoreboard(props) {
-  const minutes = props.time.minutes.toString().padStart(2, '0');
-  const seconds = props.time.seconds.toString().padStart(2, '0');
-
-  return (
-    <section className="scoreboard">
-      <div className="topRow">
-        <div className="home">
-          <h2 className="home__name">Lions</h2>
-          <div className="home__score">{props.score.home}</div>
-        </div>
-        <div className="timer">{minutes}:{seconds}</div>
-        <div className="away">
-          <h2 className="away__name">Tigers</h2>
-          <div className="away__score">{props.score.away}</div>
-        </div>
-      </div>
-      <BottomRow />
-    </section>
-  );
-}
-
-function Controls(props) {
-  return (
-    <section className="buttons">
-      <div className="homeButtons">
-        <button className="homeButtons__touchdown" onClick={props.homeTouchdown}>Home Touchdown</button>
-        <button className="homeButtons__fieldGoal" onClick={props.homeFieldGoal}>Home Field Goal</button>
-      </div>
-      <div className="awayButtons">
-        <button className="awayButtons__touchdown" onClick={props.awayTouchdown}>Away Touchdown</button>
-        <button className="awayButtons__fieldGoal" onClick={props.awayFieldGoal}>Away Field Goal</button>
-      </div>
-    </section>
-  );
-}
 
 function App() {
   const [score, setScore] = useState({ home: 0, away: 0 });
@@ -51,7 +15,7 @@ function App() {
         } else {
           return { ...time, seconds: time.seconds + 1 };
         }
-      })
+      });
     }, 1000);
 
     return () => clearInterval(intervalID);
