@@ -3,6 +3,12 @@ import Scoreboard from './components/Scoreboard';
 import Controls from './components/Controls';
 import './App.css';
 
+import './App.css';
+import TopRow from './TopRow';
+import BottomRow from './BottomRow';
+import HomeButtons from './HomeButtons';
+import AwayButtons from './AwayButtons';
+
 function App() {
   const [score, setScore] = useState({ home: 0, away: 0 });
   const [time, setTime] = useState({ seconds: 3, minutes: 0 });
